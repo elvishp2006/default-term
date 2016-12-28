@@ -1,14 +1,4 @@
 <?php
-/*
-Plugin Name: Default Term
-Plugin URI: https://github.com/allanchristiancarlos/default-term
-Description: Allows you to set the default term of a taxonomy
-Version: 0.0.1
-Author: Allan Christian Carlos
-Author URI: https://github.com/allanchristiancarlos
-License: GPL2
-Text Domain: default-term
-*/
 
 /**
  * Installs the default taxonomy default terms
@@ -174,5 +164,5 @@ function default_term_activation()
 	default_term_install_terms();
 }
 
-register_activation_hook( __FILE__, 'default_term_activation' );
+add_action( 'after_switch_theme', 'default_term_activation' );
 
